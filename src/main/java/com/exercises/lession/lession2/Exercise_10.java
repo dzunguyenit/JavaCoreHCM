@@ -10,9 +10,9 @@ public class Exercise_10 {
 		int a = 123;
 		int b = 456;
 
-		int min = (a < b) ? a : b;
+		int min = (a <= b) ? a : b;
 
-		int max = (a > b) ? a : b;
+		int max = (a >= b) ? a : b;
 
 		System.out.println("Min = " + min);
 		System.out.println("Max = " + max);
