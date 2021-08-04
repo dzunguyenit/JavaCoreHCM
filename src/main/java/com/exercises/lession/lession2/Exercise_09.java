@@ -9,22 +9,22 @@ public class Exercise_09 {
 
 		int numberMotorbike = 12345;
 
-		int sotachra;
+		int separateNumber;
 
 		int i = 1;
 
 		int sum = 0;
 
 		while (i <= 5) {
-			sotachra = numberMotorbike % 10;
-			sum += sotachra;
+			separateNumber = numberMotorbike % 10;
+			sum += separateNumber;
 			numberMotorbike /= 10;
 			i++;
 
 		}
 
 		System.out.println("Sum = " + sum);
-		System.out.println("Số nút = " + sum % 10);
+		System.out.println("Number point = " + sum % 10);
 
 	}
 
