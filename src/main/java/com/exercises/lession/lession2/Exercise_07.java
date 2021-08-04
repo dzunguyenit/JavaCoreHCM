@@ -15,7 +15,11 @@ public class Exercise_07 {
 		float physic = 7f;
 		float chemistry = 9f;
 
-		float average = (math + physic + chemistry) / 3;
+		float literature = 5f;
+		float history = 6.5f;
+		float geography = 10f;
+
+		float average = (math * 3 + physic * 3 + chemistry * 3 + literature + history + geography) / 12;
 
 		System.out.println("Average = " + average);
 
