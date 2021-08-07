@@ -27,16 +27,66 @@ public class Exercise_01 {
 	// Tính toán ngày trước đó 1 ngày
 
 	public int getDay(int month, int year) {
-		if (month > 12 || month < 1)
-			return 0;
-		else if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)
-			return 31;
-		else if (month == 4 || month == 6 || month == 9 || month == 11)
-			return 30;
-		else if (((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) && month == 2)
-			return 29;
-		else
-			return 28;
+
+		int day;
+		switch (month) {
+		case 1: {
+			day = 1;
+			break;
+		}
+		case 2: {
+			if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+				day = 28;
+			} else
+				day = 29;
+			break;
+		}
+		case 3: {
+			day = 31;
+			break;
+		}
+		case 4: {
+			day = 30;
+			break;
+		}
+		case 5: {
+			day = 31;
+			break;
+		}
+		case 6: {
+			day = 30;
+			break;
+		}
+		case 7: {
+			day = 31;
+			break;
+		}
+		case 8: {
+			day = 31;
+			break;
+		}
+		case 9: {
+			day = 30;
+			break;
+		}
+		case 10: {
+			day = 31;
+			break;
+		}
+		case 11: {
+			day = 30;
+			break;
+		}
+		case 12: {
+			day = 31;
+			break;
+		}
+		default: {
+			day = 0;
+			break;
+		}
+		}
+		return day;
 	}
 
 	public void checkDay() {
