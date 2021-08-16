@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Exercise_03 {
 	public static void main(String[] args) {
 		System.out.println("--------Exercise_02--------");
+//		
 		Scanner scanner = new Scanner(System.in);
 		String s;
 		char c = 'n';
