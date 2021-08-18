@@ -121,9 +121,9 @@ public class Exercise_01_02_03_04 {
 		return sum;
 
 	}
-
+	// Exercise_04
 	// Cho trước ma trận a, kích thước m x n. Tính tổng các phần tử trên:
-	// b. Đường chéo chính, đường chéo phụ (ma trận vuông)
+	// b. Đường chéo chính (ma trận vuông)
 
 	public static int sumMatrixMainDiagonal(int[][] a, int row) {
 		int sum = 0;
@@ -138,6 +138,7 @@ public class Exercise_01_02_03_04 {
 
 	}
 
+	// Exercise_04
 	// Cho trước ma trận a, kích thước m x n. Tính tổng các phần tử trên:
 	// c. Nửa trên đường chéo chính (ma trận vuông)
 	public static int sumMatrixAboveMainDiagonal(int[][] a, int row) {
@@ -153,6 +154,7 @@ public class Exercise_01_02_03_04 {
 
 	}
 
+	// Exercise_04
 	// Cho trước ma trận a, kích thước m x n. Tính tổng các phần tử trên:
 	// d. Nửa trên đường chéo phụ (ma trận vuông)
 	public static int sumMatrixAboveAuxiliaryDiagonal(int[][] a, int row) {
@@ -165,6 +167,7 @@ public class Exercise_01_02_03_04 {
 		return sum;
 	}
 
+	// Exercise_04
 	// Cho trước ma trận a, kích thước m x n. Tính tổng các phần tử trên:
 	// d. Nửa dưới đường chéo phụ (ma trận vuông)
 	public static int sumMatrixBelowAuxiliaryDiagonal(int[][] a, int row) {
@@ -177,6 +180,7 @@ public class Exercise_01_02_03_04 {
 		return sum;
 	}
 
+	// Exercise_04
 	// Cho trước ma trận a, kích thước m x n. Tính tổng các phần tử trên:
 	// b. Đường chéo phụ (ma trận vuông)
 
@@ -192,6 +196,7 @@ public class Exercise_01_02_03_04 {
 
 	}
 
+	// Exercise_04
 	// Cho trước ma trận a, kích thước m x n. Tính tổng các phần tử trên:
 	// c. Nửa dưới đường chéo chính (ma trận vuông)
 	public static int sumMatrixBelowMainDiagonal(int[][] a, int row) {
