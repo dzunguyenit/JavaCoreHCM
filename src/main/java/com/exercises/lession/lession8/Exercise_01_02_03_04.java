@@ -107,17 +107,19 @@ public class Exercise_01_02_03_04 {
 	// a. Dòng d, cột c
 
 	public static int sumMatrixWithRowColumn(int[][] a, int row, int column) {
-		int sum = 0;
+		int sumRow = 0;
+		int sumColumn = 0;
+
 		for (int i = 0, r = a.length; i < r; i++) {
-			for (int j = 0, c = a[0].length; j < c; j++) {
-				if (row == i && column == j) {
-					sum += a[i][j];
-					return sum;
-				} else {
-					sum += a[i][j];
-				}
+			sumRow += a[row][i];
+		}
+
+		for (int i = 0, r = a.length; i < r; i++) {
+			if (a[i][column] != a[row][column]) {
+				sumRow += a[i][column];
 			}
 		}
+		int sum = sumRow + sumColumn;
 		return sum;
 
 	}
