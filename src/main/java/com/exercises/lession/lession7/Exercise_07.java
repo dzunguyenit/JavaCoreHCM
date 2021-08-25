@@ -6,7 +6,6 @@ public class Exercise_07 {
 
 	public static int[] countVowelConsonant(String s) {
 
-		int[] count = new int[2];
 		int countVowelCharacter = 0;
 		int countConsonantCharacter = 0;
 
@@ -20,10 +19,7 @@ public class Exercise_07 {
 				countConsonantCharacter++;
 		}
 
-		count[0] = countVowelCharacter;
-		count[1] = countConsonantCharacter;
-
-		return count;
+		return new int[] { countVowelCharacter, countConsonantCharacter };
 
 	}
 
