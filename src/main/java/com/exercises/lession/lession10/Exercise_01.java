@@ -2,46 +2,72 @@ package com.exercises.lession.lession10;
 
 public class Exercise_01 {
 
-//	//	 Phân số
-//	 Khai báo kiểu dữ liệu phân số (Fraction)
-//	 Nhập/Xuất phân số
-//	 Rút gọn phân số
-//	 Tính tổng, hiệu, tích, thương hai phân số
-//	 Kiểm tra phân số tối giản
-//	 Quy đồng hai phân số
-//	 Kiểm tra phân số âm hay dương
-//	 So sánh hai phân số
+	// Phân số
+	// Khai báo kiểu dữ liệu phân số (Fraction)
+	// Nhập/Xuất phân số
+	// Rút gọn phân số
+	// Tính tổng, hiệu, tích, thương hai phân số
+	// Kiểm tra phân số tối giản
+	// Quy đồng hai phân số
+	// Kiểm tra phân số âm hay dương
+	// So sánh hai phân số
 	public static void main(String[] args) {
-		System.out.println("===============TEST PHAN SO:=================");
-		Fraction ps1 = new Fraction(2, 4);
-		Fraction ps2 = new Fraction(-1, 3);
+		// Phân số
+		Fraction fraction01 = new Fraction(1, 4);
+		Fraction fraction02 = new Fraction(1, 2);
 
-		ps1.printFraction();
-		ps2.printFraction();
+		// Nhập/Xuất phân số
+		fraction01.printFraction(fraction01);
+		fraction02.printFraction(fraction02);
 
-		System.out.println("Phan so 1 toi gian -> " + ps1.isReduceFraction());
-		System.out.println("Phan so 2 toi gian -> " + ps2.isReduceFraction());
+		Fraction fraction01Reduce = fraction01.reduceFraction(fraction01.getNumerator(), fraction01.getDenominator());
+		Fraction fraction02Reduce = fraction01.reduceFraction(fraction02.getNumerator(), fraction02.getDenominator());
 
-		Fraction ps3 = ps1.reduceFraction(2, 4);
-		Fraction ps4 = ps2.reduceFraction(-1, 3);
-		ps3.printFraction();
-		ps4.printFraction();
+		// Rút gọn phân số
+		System.out.print("Fraction01 reduce = ");
+		fraction01Reduce.printFraction(fraction01Reduce);
 
-		System.out.print("Tong: ");
-		ps1.addFraction(ps2).printFraction();
-		System.out.print("Hieu: ");
-		ps1.subFraction(ps2).printFraction();
-		System.out.print("Tich: ");
-		ps1.mulFraction(ps2).printFraction();
-		System.out.print("Thuong: ");
-		ps1.divFraction(ps2).printFraction();
+		System.out.print("Fraction02 reduce = ");
+		fraction02Reduce.printFraction(fraction02Reduce);
 
-		System.out.println("Quy dong: ");
-		Fraction[] listPs = ps1.isomerizateFraction(ps2);
-		listPs[0].printFraction();
-		listPs[1].printFraction();
+		// Tính tổng hai phân số
+		Fraction sumFraction = fraction01Reduce.sumFraction(fraction01Reduce, fraction02Reduce);
+		System.out.print("Sum fraction01 + fraction02 = ");
+		sumFraction.printFraction(sumFraction);
 
-		System.out.println("Phan so ps1 duong -> " + ps1.isPossitiveFraction());
-		ps1.compareFraction(ps2);
+		// Tính hiệu hai phân số// Tính tổng, hiệu, tích, thương hai phân số
+		Fraction subFraction = fraction01Reduce.subtractFraction(fraction01Reduce, fraction02Reduce);
+		System.out.print("Subtract fraction01 - fraction02 = ");
+		sumFraction.printFraction(subFraction);
+
+		// Tính tích hai phân số
+		Fraction multiFraction = fraction01Reduce.multiplyFraction(fraction01Reduce, fraction02Reduce);
+		System.out.print("Multiply fraction01 * fraction02 = ");
+		sumFraction.printFraction(multiFraction);
+
+		// Tính thương hai phân số
+		Fraction divFraction = fraction01Reduce.divideFraction(fraction01Reduce, fraction02Reduce);
+		System.out.print("Divide fraction01 / fraction02 = ");
+		sumFraction.printFraction(divFraction);
+
+		// Kiểm tra phân số tối giản
+		System.out.printf("Fraction 01 = %d/%d is reduce: " + fraction01.isReduceFraction(), fraction01.getNumerator(),
+				fraction01.getDenominator());
+
+		System.out.printf("\nFraction 02 = %d/%d is reduce: " + fraction02Reduce.isReduceFraction(),
+				fraction02Reduce.getNumerator(), fraction02Reduce.getDenominator());
+
+		// Quy đồng hai phân số
+		Fraction[] arrayFraction = fraction01Reduce.reduceSameDenominatorFraction(fraction01Reduce, fraction02Reduce);
+		System.out.print("\nFraction 01 = ");
+		arrayFraction[0].printFraction(arrayFraction[0]);
+		System.out.print("Fraction 02 = ");
+		arrayFraction[1].printFraction(arrayFraction[1]);
+
+		// Kiểm tra phân số âm hay dương
+		System.out.println("Fraction is > 0: " + fraction01Reduce.isBiggerThanZero(fraction02Reduce));
+
+		// So sánh hai phân số
+		fraction01Reduce.compareFraction(fraction01Reduce, fraction02Reduce);
 	}
 }

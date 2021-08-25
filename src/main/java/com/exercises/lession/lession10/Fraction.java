@@ -23,14 +23,14 @@ public class Fraction {
 		return (denominator == 0) ? false : true;
 	}
 
-	public void printFraction() {
+	public void printFraction(Fraction fraction) {
 		if (isFraction()) {
 			if (this.numerator == this.denominator) {
 				System.out.println(1);
 			} else if (this.numerator == 0) {
 				System.out.println(0);
 			} else {
-				System.out.format("%d/%d\n", this.numerator, this.denominator);
+				System.out.format("%d/%d\n", fraction.numerator, fraction.denominator);
 			}
 
 		} else {
@@ -42,50 +42,58 @@ public class Fraction {
 	public Fraction reduceFraction(int numerator, int denominator) {
 		Fraction fraction = new Fraction(numerator, denominator);
 		if (isFraction()) {
-			int greatestCommonDivisor = greatestCommonDivisor(this.numerator, this.denominator);
-			this.numerator = this.numerator / greatestCommonDivisor;
-			this.denominator = this.denominator / greatestCommonDivisor;
+			int greatestCommonDivisor = greatestCommonDivisor(numerator, denominator);
+			fraction.numerator = numerator / greatestCommonDivisor;
+			fraction.denominator = denominator / greatestCommonDivisor;
 		}
 		return fraction;
 	}
 
-	public Fraction addFraction(Fraction fraction) {
-		fraction = new Fraction(denominator, denominator);
-		if (isFraction()) {
-			this.numerator = this.numerator * fraction.denominator + fraction.numerator * this.denominator;
-			this.denominator = this.denominator * fraction.denominator;
-		}
-		return reduceFraction(denominator, denominator);
+	public Fraction sumFraction(Fraction a, Fraction b) {
+		Fraction sumFraction;
+		int sumNumerator = 0;
+		int sumDenominator = 0;
+		sumNumerator = a.getNumerator() * b.getDenominator() + a.getDenominator() * b.getNumerator();
+		sumDenominator = a.getDenominator() * b.getDenominator();
+
+		sumFraction = new Fraction(sumNumerator, sumDenominator);
+		return reduceFraction(sumFraction.getNumerator(), sumFraction.getDenominator());
 	}
 
-	public Fraction subFraction(Fraction ps) { // trừ 2 phân số
-		Fraction Fraction = new Fraction(denominator, denominator);
-		if (isFraction()) {
-			Fraction.numerator = this.numerator * ps.denominator - ps.numerator * this.denominator;
-			Fraction.denominator = this.denominator * ps.denominator;
-		}
-		return Fraction.reduceFraction(denominator, denominator);
+	public Fraction subtractFraction(Fraction a, Fraction b) {
+		Fraction subFraction;
+		int subNumerator = 0;
+		int subDenominator = 0;
+		subNumerator = a.getNumerator() * b.getDenominator() - a.getDenominator() * b.getNumerator();
+		subDenominator = a.getDenominator() * b.getDenominator();
+
+		subFraction = new Fraction(subNumerator, subDenominator);
+		return reduceFraction(subFraction.getNumerator(), subFraction.getDenominator());
 	}
 
-	public Fraction mulFraction(Fraction ps) { // tích 2 phân số
-		Fraction Fraction = new Fraction(denominator, denominator);
-		if (isFraction()) {
-			Fraction.numerator = this.numerator * ps.numerator;
-			Fraction.denominator = this.denominator * ps.denominator;
-		}
-		return Fraction.reduceFraction(denominator, denominator);
+	public Fraction multiplyFraction(Fraction a, Fraction b) {
+		Fraction multiFraction;
+		int multiNumerator = 0;
+		int multiDenominator = 0;
+		multiNumerator = a.getNumerator() * b.getNumerator();
+		multiDenominator = a.getDenominator() * b.getDenominator();
+
+		multiFraction = new Fraction(multiNumerator, multiDenominator);
+		return reduceFraction(multiFraction.getNumerator(), multiFraction.getDenominator());
 	}
 
-	public Fraction divFraction(Fraction ps) { // thương 2 phân số
-		Fraction Fraction = new Fraction(denominator, denominator);
-		if (isFraction()) {
-			Fraction.numerator = this.numerator * ps.denominator;
-			Fraction.denominator = this.denominator * ps.numerator;
-		}
-		return Fraction.reduceFraction(denominator, denominator);
+	public Fraction divideFraction(Fraction a, Fraction b) {
+		Fraction divFraction;
+		int multiNumerator = 0;
+		int multiDenominator = 0;
+		multiNumerator = a.getNumerator() * b.getDenominator();
+		multiDenominator = a.getDenominator() * b.getNumerator();
+
+		divFraction = new Fraction(multiNumerator, multiDenominator);
+		return reduceFraction(divFraction.getNumerator(), divFraction.getDenominator());
 	}
 
-	public boolean isReduceFraction() { // kiểm tra xem có phải phân số tối giản không
+	public boolean isReduceFraction() {
 		if (isFraction()) {
 			if (Math.abs(greatestCommonDivisor(this.numerator, this.denominator)) == 1) {
 				return true;
@@ -95,46 +103,35 @@ public class Fraction {
 	}
 
 	// Quy đồng hai phân số
-	public Fraction[] isomerizateFraction(Fraction ps) {// quy đồng 2 phân số
-		Fraction Fraction1 = new Fraction(denominator, denominator);
-		Fraction Fraction2 = new Fraction(denominator, denominator);
-		Fraction1.numerator = this.numerator;
-		Fraction1.denominator = this.denominator;
-		Fraction1 = Fraction1.reduceFraction(denominator, denominator);
-		Fraction2 = ps.reduceFraction(denominator, denominator);
+	public Fraction[] reduceSameDenominatorFraction(Fraction a, Fraction b) {
+		a = a.reduceFraction(a.getNumerator(), a.getDenominator());
+		b = b.reduceFraction(b.getNumerator(), b.getDenominator());
 
-		int GCDms = greatestCommonDivisor(Fraction1.denominator, Fraction2.denominator);
-		int ms = Fraction1.denominator * Fraction2.denominator / GCDms;
-		Fraction1.numerator = Fraction1.numerator * Fraction2.denominator / GCDms;
-		Fraction2.numerator = Fraction2.numerator * Fraction1.denominator / GCDms;
-		Fraction1.denominator = Fraction2.denominator = ms;
-		System.out.println("tu so 1 " + Fraction1.numerator);
-		return new Fraction[] { Fraction1, Fraction2 };
+		int greatestCommonDivisor = greatestCommonDivisor(a.getDenominator(), b.getDenominator());
+		int leastCommonMultiple = a.getDenominator() * b.getDenominator() / greatestCommonDivisor;
+
+		a.numerator = a.numerator * (leastCommonMultiple / a.denominator);
+		b.numerator = b.numerator * (leastCommonMultiple / b.denominator);
+		a.denominator = b.denominator = leastCommonMultiple;
+		return new Fraction[] { a, b };
 	}
 
-	public boolean isPossitiveFraction() { // kiểm tra xem có phải phân số dương không
-		if (isFraction()) {
-			if (this.numerator * this.denominator > 0) {
-				return true;
-			}
-		}
-		return false;
+	public boolean isBiggerThanZero(Fraction a) {
+		return (a.getNumerator() * a.getDenominator() > 0) ? true : false;
 	}
 
-	public void compareFraction(Fraction fraction) { // so sánh 2 phân số
-		if (isFraction()) {
-			fraction = new Fraction(this.numerator, this.denominator);
-			int ts = this.numerator;
-			int ms = this.denominator;
-			fraction = subFraction(fraction);
+	public void compareFraction(Fraction a, Fraction b) { // so sánh 2 phân số
+		Fraction subFraction = subtractFraction(a, b);
 
-			if (fraction.isPossitiveFraction()) {
-				System.out.format("%d/%d > %d/%d\n", ts, ms, fraction.numerator, fraction.denominator);
-			} else if (fraction.numerator == 0) {
-				System.out.format("%d/%d = %d/%d\n", ts, ms, fraction.numerator, fraction.denominator);
-			} else {
-				System.out.format("%d/%d < %d/%d\n", ts, ms, fraction.numerator, fraction.denominator);
-			}
+		if (subFraction.isBiggerThanZero(subFraction)) {
+			System.out.format("%d/%d > %d/%d\n", a.getNumerator(), a.getDenominator(), b.getNumerator(),
+					b.getDenominator());
+		} else if (subFraction.getNumerator() == 0 && subFraction.getNumerator() == 0) {
+			System.out.format("%d/%d = %d/%d\n", a.getNumerator(), a.getDenominator(), b.getNumerator(),
+					b.getDenominator());
+		} else {
+			System.out.format("%d/%d < %d/%d\n", a.getNumerator(), a.getDenominator(), b.getNumerator(),
+					b.getDenominator());
 		}
 	}
 
@@ -146,6 +143,22 @@ public class Fraction {
 			b = tmp;
 		}
 		return a;
+	}
+
+	public int getNumerator() {
+		return numerator;
+	}
+
+	public void setNumerator(int numerator) {
+		this.numerator = numerator;
+	}
+
+	public int getDenominator() {
+		return denominator;
+	}
+
+	public void setDenominator(int denominator) {
+		this.denominator = denominator;
 	}
 
 }
