@@ -11,28 +11,22 @@ public class Monomial {
 //	 Tính giá trị đơn thức tại x = x0
 	// XÉT ĐƠN THỨC ĐƠN GIẢN DẠNG 1 BIẾN với hệ số nguyên
 	private int ax;
-
 	private int pow;
 
-	public Monomial() {
+	@Override
+	public String toString() {
+		if (this.pow == 0)
+			return "" + this.ax;
+		if (this.pow == 1)
+			return this.ax + "x";
+		if (this.ax == 0)
+			return "0";
+		return this.ax + "^" + this.pow;
 	}
 
 	public Monomial(int a, int pow) {
 		this.ax = a;
 		this.pow = pow;
-	}
-
-	public void printMonomial() {
-		if (this.pow == 0) {
-			System.out.format("%d\n", this.ax);
-		} else if (this.pow == 1) {
-			System.out.format("%dx\n", this.ax);
-		} else if (this.ax == 0) {
-			System.out.format("0\n");
-		} else {
-			System.out.format("%dx^%d\n", this.ax, this.pow);
-		}
-
 	}
 
 	public Monomial multiMonomial(Monomial a, Monomial b) {
@@ -103,32 +97,32 @@ public class Monomial {
 	public static void main(String[] args) {
 		Monomial monomial1 = new Monomial(2, 7);
 		Monomial monomial2 = new Monomial(1, 2);
-		monomial1.printMonomial();
-		monomial2.printMonomial();
+		System.out.println(monomial1);
+		System.out.println(monomial2);
 
 		Monomial monomial = monomial1.multiMonomial(monomial1, monomial2);
 
 		// Tính tích 2 đơn thức
 		System.out.printf("Multiply: %dx^%d * %dx^%d = ", monomial1.getAx(), monomial1.getPow(), monomial2.getAx(),
 				monomial2.getPow());
-		monomial.printMonomial();
+		System.out.println(monomial);
 
 		// Tính thương 2 đơn thức
 		System.out.printf("Divide: %dx^%d / %dx^%d = ", monomial1.getAx(), monomial1.getPow(), monomial2.getAx(),
 				+monomial2.getPow());
 		monomial = monomial1.divideMonomial(monomial1, monomial2);
-		monomial.printMonomial();
+		System.out.println(monomial);
 
 		// Đạo hàm cấp 1
 		System.out.printf("Derivative Monomial Level 1 %dx^%d: ", monomial1.getAx(), monomial1.getPow());
 		monomial = monomial1.derivativeMonomialLevelOne(monomial1.getAx(), monomial1.getPow());
-		monomial.printMonomial();
+		System.out.println(monomial);
 
 		// Đạo hàm cấp k
 		int k = 5;
 		System.out.printf("Derivative Monomial Level %d %dx^%d: ", k, monomial1.getAx(), monomial1.getPow());
 		monomial = monomial1.DerivativeMonomialLevelK(monomial1.getAx(), monomial1.getPow(), k);
-		monomial.printMonomial();
+		System.out.println(monomial);
 
 		// Tính giá trị đơn thức tại x = x0
 		int x0 = -1;

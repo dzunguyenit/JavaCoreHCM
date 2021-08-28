@@ -9,16 +9,17 @@ public class Point {
 //	 Tìm điểm đối xứng qua gốc toạ độ/trục Ox/Oy
 //	 Kiểm tra điểm thuộc phần tư nào?
 
+	@Override
+	public String toString() {
+		return "(" + x + ", " + y + ")";
+	}
+
 	private int x;
 	private int y;
 
 	public Point(int x, int y) {
 		this.x = x;
 		this.y = y;
-	}
-
-	public void printPoint() {
-		System.out.format("(x,y) = (%d,%d)\n", this.x, this.y);
 	}
 
 	public double distance(Point pointA, Point pointB) { // tính khoảng cách 2 điểm A và B
@@ -79,7 +80,7 @@ public class Point {
 
 	public static void main(String[] args) {
 		Point point = new Point(-80, 10);
-		point.printPoint();
+		System.out.println(point);
 
 //		 Tính khoảng cách giữa hai điểm
 		Point pointB = new Point(-10, 20);
@@ -89,17 +90,17 @@ public class Point {
 //		 Tìm điểm đối xứng qua gốc toạ độ
 		System.out.printf("Point (%d,%d): is symmetry O ", point.x, point.y);
 		Point pointO = point.getSymmetryPointO(point.getX(), point.getY());
-		pointO.printPoint();
+		System.out.println(pointO);
 
 //		 Tìm điểm đối xứng qua gốc trục Ox
 		System.out.printf("Point (%d,%d): is symmetry Ox ", point.x, point.y);
 		Point pointOy = point.getSymmetryOx(point.getX(), point.getY());
-		pointOy.printPoint();
+		System.out.println(pointOy);
 
 //		 Tìm điểm đối xứng qua gốc trục Oy
 		System.out.printf("Point (%d,%d): is symmetry Oy ", point.x, point.y);
 		Point pointOx = point.getSymmetryOy(point.getX(), point.getY());
-		pointOx.printPoint();
+		System.out.println(pointOx);
 
 		System.out.printf("Point (%d,%d) is belong quadrant: " + point.belongQuadrant(), point.x, point.y);
 	}

@@ -6,6 +6,15 @@ public class Triangle {
 //	 Nhập/Xuất tam giác
 //	 Tính chu vi, diện tích tam giác
 
+	@Override
+	public String toString() {
+		if (isTriangle()) {
+			return "(a,b,c) = " + "(" + this.a + "," + this.b + "," + this.c + ")" + "";
+		} else {
+			return "Khong phai tam giac!";
+		}
+	}
+
 	private int a;
 	private int b;
 	private int c;
@@ -21,14 +30,6 @@ public class Triangle {
 			return true;
 		}
 		return false;
-	}
-
-	public void print() {
-		if (isTriangle()) {
-			System.out.format("(a,b,c) = (%d,%d,%d)\n", this.a, this.b, this.c);
-		} else {
-			System.out.println("Khong phai tam giac!");
-		}
 	}
 
 	public int getCircumference() {
@@ -66,7 +67,7 @@ public class Triangle {
 
 	public static void main(String[] args) {
 		Triangle triangle = new Triangle(3, 4, 5);
-		triangle.print();
+		System.out.println(triangle);
 
 		System.out.printf("Circumference triangle (%d,%d,%d) = %d \n", triangle.getA(), triangle.getB(),
 				triangle.getC(), triangle.getCircumference());

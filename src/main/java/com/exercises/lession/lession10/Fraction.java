@@ -11,6 +11,20 @@ public class Fraction {
 //	 Kiểm tra phân số âm hay dương
 //	 So sánh hai phân số
 
+	@Override
+	public String toString() {
+		if (isFraction()) {
+			if (numerator == denominator)
+				return "1";
+			if (numerator == 0)
+				return "0";
+			return numerator + "/" + denominator;
+
+		} else {
+			return "Input denominator != 0";
+		}
+	}
+
 	private int numerator;
 	private int denominator;
 
@@ -21,22 +35,6 @@ public class Fraction {
 
 	public boolean isFraction() {
 		return (denominator == 0) ? false : true;
-	}
-
-	public void printFraction(Fraction fraction) {
-		if (isFraction()) {
-			if (this.numerator == this.denominator) {
-				System.out.println(1);
-			} else if (this.numerator == 0) {
-				System.out.println(0);
-			} else {
-				System.out.format("%d/%d\n", fraction.numerator, fraction.denominator);
-			}
-
-		} else {
-			System.out.format("Input denominator != 0");
-		}
-
 	}
 
 	public Fraction reduceFraction(int numerator, int denominator) {
@@ -173,42 +171,42 @@ public class Fraction {
 		Fraction fraction02 = new Fraction(1, 2);
 
 		// Nhập/Xuất phân số
-		fraction01.printFraction(fraction01);
-		fraction02.printFraction(fraction02);
+		System.out.println(fraction01);
+		System.out.println(fraction02);
 
 		Fraction fraction01Reduce = fraction01.reduceFraction(fraction01.getNumerator(), fraction01.getDenominator());
 		Fraction fraction02Reduce = fraction01.reduceFraction(fraction02.getNumerator(), fraction02.getDenominator());
 
 		// Rút gọn phân số
 		System.out.printf("Fraction01: %d/%d reduce = ", fraction01.getNumerator(), fraction01.getDenominator());
-		fraction01Reduce.printFraction(fraction01Reduce);
+		System.out.println(fraction01Reduce);
 
 		System.out.printf("Fraction02: %d/%d reduce = ", fraction02.getNumerator(), fraction02.getDenominator());
-		fraction02Reduce.printFraction(fraction02Reduce);
+		System.out.println(fraction02Reduce);
 
 		// Tính tổng hai phân số
 		Fraction sumFraction = fraction01Reduce.sumFraction(fraction01Reduce, fraction02Reduce);
 		System.out.printf("Sum: %d/%d + %d/%d = ", fraction01Reduce.getNumerator(), fraction01Reduce.getDenominator(),
 				fraction02Reduce.getNumerator(), fraction02Reduce.getDenominator());
-		sumFraction.printFraction(sumFraction);
+		System.out.println(sumFraction);
 
 		// Tính hiệu hai phân số// Tính tổng, hiệu, tích, thương hai phân số
 		Fraction subFraction = fraction01Reduce.subtractFraction(fraction01Reduce, fraction02Reduce);
 		System.out.printf("Subtract: %d/%d - %d/%d = ", fraction01Reduce.getNumerator(),
 				fraction01Reduce.getDenominator(), fraction02Reduce.getNumerator(), fraction02Reduce.getDenominator());
-		sumFraction.printFraction(subFraction);
+		System.out.println(subFraction);
 
 		// Tính tích hai phân số
 		Fraction multiFraction = fraction01Reduce.multiplyFraction(fraction01Reduce, fraction02Reduce);
 		System.out.printf("Multiply: %d/%d * %d/%d = ", fraction01Reduce.getNumerator(),
 				fraction01Reduce.getDenominator(), fraction02Reduce.getNumerator(), fraction02Reduce.getDenominator());
-		sumFraction.printFraction(multiFraction);
+		System.out.println(multiFraction);
 
 		// Tính thương hai phân số
 		Fraction divFraction = fraction01Reduce.divideFraction(fraction01Reduce, fraction02Reduce);
 		System.out.printf("Divide: %d/%d / %d/%d = ", fraction01Reduce.getNumerator(),
 				fraction01Reduce.getDenominator(), fraction02Reduce.getNumerator(), fraction02Reduce.getDenominator());
-		sumFraction.printFraction(divFraction);
+		System.out.println(divFraction);
 
 		// Kiểm tra phân số tối giản
 		System.out.printf("Fraction 01 = %d/%d is reduce: " + fraction01.isReduceFraction(), fraction01.getNumerator(),
@@ -220,9 +218,9 @@ public class Fraction {
 		// Quy đồng hai phân số
 		Fraction[] arrayFraction = fraction01Reduce.reduceSameDenominatorFraction(fraction01Reduce, fraction02Reduce);
 		System.out.print("\nFraction 01 = ");
-		arrayFraction[0].printFraction(arrayFraction[0]);
+		System.out.println(arrayFraction[0]);
 		System.out.print("Fraction 02 = ");
-		arrayFraction[1].printFraction(arrayFraction[1]);
+		System.out.println(arrayFraction[1]);
 
 		// Kiểm tra phân số âm hay dương
 		System.out.printf("Fraction %d/%d is > 0: " + fraction01Reduce.isBiggerThanZero(fraction02Reduce) + "\n",
