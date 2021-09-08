@@ -1,8 +1,6 @@
 package com.exercises.lession.lession13.entities;
 
-import java.util.Scanner;
-
-public class Lecturer {
+public abstract class Lecturer {
 
 	protected String name;
 	protected String email;
@@ -25,21 +23,6 @@ public class Lecturer {
 		this.name = name;
 	}
 
-	public void input() {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Input name: ");
-		this.name = sc.nextLine();
+	public abstract int getSalary();
 
-		System.out.println("Input email: ");
-		this.email = sc.nextLine();
-
-		System.out.println("Input address: ");
-		this.address = sc.nextLine();
-
-		System.out.println("Input phone: ");
-		this.phone = sc.nextLine();
-
-		System.out.println("Input hours teach in month: ");
-		this.hoursTeachInMonth = sc.nextInt();
-	}
 }

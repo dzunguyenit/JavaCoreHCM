@@ -1,7 +1,5 @@
 package com.exercises.lession.lession13.entities;
 
-import java.util.Scanner;
-
 public class VisitingLecture extends Lecturer {
 
 //	Thông tin giảng viên thỉnh giảng: tên giảng viên,
@@ -9,6 +7,7 @@ public class VisitingLecture extends Lecturer {
 //	giảng dạy trong tháng
 
 	private String placeToWork;
+	private static final int SALARY_IN_HOUR = 200000;
 
 	public VisitingLecture() {
 	}
@@ -21,7 +20,7 @@ public class VisitingLecture extends Lecturer {
 
 	@Override
 	public String toString() {
-		final StringBuffer sb = new StringBuffer("Student {");
+		final StringBuffer sb = new StringBuffer("VisitingLecture {");
 		sb.append("name='").append(name).append('\'');
 		sb.append(", email=").append(email);
 		sb.append(", address=").append(address);
@@ -33,9 +32,8 @@ public class VisitingLecture extends Lecturer {
 	}
 
 	@Override
-	public void input() {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Input place to work: ");
-		this.placeToWork = sc.nextLine();
+	public int getSalary() {
+		return SALARY_IN_HOUR * this.hoursTeachInMonth;
 	}
+
 }

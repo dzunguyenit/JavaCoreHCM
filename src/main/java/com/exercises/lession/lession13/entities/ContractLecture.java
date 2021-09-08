@@ -1,7 +1,5 @@
 package com.exercises.lession.lession13.entities;
 
-import java.util.Scanner;
-
 public class ContractLecture extends Lecturer {
 //	Thông tin giảng viên cơ hữu: tên giảng viên, email, địa
 //	chỉ, điện thoại, số giờ giảng dạy trong tháng, lương
@@ -21,18 +19,8 @@ public class ContractLecture extends Lecturer {
 	}
 
 	@Override
-	public void input() {
-		super.input();
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Input salary contract: ");
-		this.salaryContract = sc.nextInt();
-		System.out.println("Input salary rule time in month: ");
-		this.salaryContract = sc.nextInt();
-	}
-
-	@Override
 	public String toString() {
-		final StringBuffer sb = new StringBuffer("Student {");
+		final StringBuffer sb = new StringBuffer("ContractLecture {");
 		sb.append("name='").append(name).append('\'');
 		sb.append(", email=").append(email);
 		sb.append(", address=").append(address);
@@ -42,5 +30,16 @@ public class ContractLecture extends Lecturer {
 		sb.append(", ruleTimeInMonth=").append(ruleTimeInMonth);
 		sb.append('}');
 		return sb.toString();
+	}
+
+	@Override
+	public int getSalary() {
+		int salary = 0;
+		if (this.hoursTeachInMonth == 40) {
+			salary += this.salaryContract;
+		} else if (this.hoursTeachInMonth > 40) {
+			salary += (hoursTeachInMonth - 40) * this.salaryContract + this.salaryContract;
+		}
+		return salary;
 	}
 }
