@@ -67,6 +67,14 @@ public class ITCenter {
 		}
 		System.out.println("====================================");
 		System.out.println("Max Salary is: " + maxSalary);
+		
+		// Tìm loại giảng viên có tổng lương cao nhất.
+		if (maxSalary instanceof VisitingLecture) {
+			System.out.println("Max Salary is belong visiting lecture");
+		}
+		else {
+			System.out.println("Max Salary is belong contract lecture");
+		}
 
 	}
 
