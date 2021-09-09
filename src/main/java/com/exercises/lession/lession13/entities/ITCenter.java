@@ -20,7 +20,7 @@ public class ITCenter {
 		listContractLecture.add(contractLecture03);
 		listContractLecture.add(contractLecture04);
 
-		Lecturer visitLecture01 = new VisitingLecture("Tuấn", "tuan1990@gmailcom", "123 Cộng Hoà", "0988777828", 40,
+		Lecturer visitLecture01 = new VisitingLecture("Tuấn", "tuan1990@gmailcom", "123 Cộng Hoà", "0988777828", 10000,
 				"Trung tâm ABC");
 		Lecturer visitLecture02 = new VisitingLecture("Vinh", "vinhguyen1991@gmailcom", "12 Điện Biên Phủ",
 				"0908777828", 40, "Trung tâm ABC");

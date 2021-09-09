@@ -7,6 +7,7 @@ public class VisitingLecture extends Lecturer {
 //	giảng dạy trong tháng
 
 	private String placeToWork;
+	private int hoursTeachInMonth;
 	private static final int SALARY_IN_HOUR = 200000;
 
 	public VisitingLecture() {
@@ -14,7 +15,8 @@ public class VisitingLecture extends Lecturer {
 
 	public VisitingLecture(String name, String email, String address, String phone, int hoursTeachInMonth,
 			String placeToWork) {
-		super(name, email, address, phone, hoursTeachInMonth);
+		super(name, email, address, phone);
+		this.hoursTeachInMonth = hoursTeachInMonth;
 		this.placeToWork = placeToWork;
 	}
 

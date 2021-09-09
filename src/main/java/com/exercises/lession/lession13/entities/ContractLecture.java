@@ -7,13 +7,15 @@ public class ContractLecture extends Lecturer {
 
 	private int salaryContract;
 	private int ruleTimeInMonth;
+	private int hoursTeachInMonth;
 
 	public ContractLecture() {
 	}
 
 	public ContractLecture(String name, String email, String address, String phone, int hoursTeachInMonth,
 			int salaryContract, int ruleTimeInMonth) {
-		super(name, email, address, phone, hoursTeachInMonth);
+		super(name, email, address, phone);
+		this.hoursTeachInMonth = hoursTeachInMonth;
 		this.salaryContract = salaryContract;
 		this.ruleTimeInMonth = ruleTimeInMonth;
 	}
