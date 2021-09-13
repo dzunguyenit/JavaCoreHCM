@@ -32,6 +32,6 @@ public class App {
 			total += pricePerUnit * s.calculateArea();
 		}
 
-		System.out.println("Total pay for realstate is = " + total);
+		System.out.println("Total pay for realestate is = " + total);
 	}
 }
