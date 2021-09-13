@@ -19,7 +19,7 @@ public class Square extends Shape {
 	@Override
 	public String toString() {
 		final StringBuffer sb = new StringBuffer("Square {");
-		sb.append("topLeft='").append(topLeft.toString()).append('\'');
+		sb.append("topLeft=").append(topLeft.toString());
 		sb.append(", width=").append(width);
 		sb.append('}');
 		return sb.toString();

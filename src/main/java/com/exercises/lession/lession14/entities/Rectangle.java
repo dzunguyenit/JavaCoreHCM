@@ -21,7 +21,7 @@ public class Rectangle extends Shape {
 	@Override
 	public String toString() {
 		final StringBuffer sb = new StringBuffer("Rectangle {");
-		sb.append("topLeft='").append(topLeft.toString()).append('\'');
+		sb.append("topLeft=").append(topLeft.toString());
 		sb.append(", width=").append(width);
 		sb.append(", height=").append(height);
 		sb.append('}');

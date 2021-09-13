@@ -21,9 +21,9 @@ public class Triangle extends Shape {
 	@Override
 	public String toString() {
 		final StringBuffer sb = new StringBuffer("Triangle {");
-		sb.append("p1='").append(p1.toString()).append('\'');
-		sb.append("p2='").append(p2.toString()).append('\'');
-		sb.append("p3='").append(p3.toString()).append('\'');
+		sb.append("p1 = ").append(p1.toString()).append (','+" ");
+		sb.append("p2 = ").append(p2.toString()).append(','+" ");
+		sb.append("p3 = ").append(p3.toString());
 		sb.append('}');
 		return sb.toString();
 	}

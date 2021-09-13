@@ -19,7 +19,7 @@ public class Circle extends Shape {
 	@Override
 	public String toString() {
 		final StringBuffer sb = new StringBuffer("Circle {");
-		sb.append("center='").append(center.toString()).append('\'');
+		sb.append("center = ").append(center.toString());
 		sb.append(", radius=").append(radius);
 		sb.append('}');
 		return sb.toString();

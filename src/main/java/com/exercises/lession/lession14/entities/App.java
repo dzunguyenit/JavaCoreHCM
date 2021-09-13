@@ -7,12 +7,16 @@ public class App {
 	public static void main(String[] args) {
 
 		Shape circle = new Circle(new Point(3, 4), 5);
+		System.out.println(circle);
 
 		Shape rectangle = new Rectangle(new Point(3, 4), 5, 6);
+		System.out.println(rectangle);
 
 		Shape square = new Square(new Point(5, 6), 8);
+		System.out.println(square);
 
 		Shape triangle = new Triangle(new Point(1, 2), new Point(3, 4), new Point(5, 6));
+		System.out.println(triangle);
 
 		List<Shape> listShape = new ArrayList<>();
 
@@ -28,6 +32,6 @@ public class App {
 			total += pricePerUnit * s.calculateArea();
 		}
 
-		System.out.println(total);
+		System.out.println("Total pay for realstate is = " + total);
 	}
 }
