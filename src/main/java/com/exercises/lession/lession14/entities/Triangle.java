@@ -21,8 +21,8 @@ public class Triangle extends Shape {
 	@Override
 	public String toString() {
 		final StringBuffer sb = new StringBuffer("Triangle {");
-		sb.append("p1 = ").append(p1.toString()).append (','+" ");
-		sb.append("p2 = ").append(p2.toString()).append(','+" ");
+		sb.append("p1 = ").append(p1.toString()).append(',' + " ");
+		sb.append("p2 = ").append(p2.toString()).append(',' + " ");
 		sb.append("p3 = ").append(p3.toString());
 		sb.append('}');
 		return sb.toString();
@@ -36,6 +36,7 @@ public class Triangle extends Shape {
 
 	@Override
 	public void fromConsole(Scanner sc) {
+		System.out.println("Hình tam giác: ");
 		System.out.println("Nhập vào tọa độ 3 điểm của tam giác: ");
 
 		System.out.print("x1 = ");

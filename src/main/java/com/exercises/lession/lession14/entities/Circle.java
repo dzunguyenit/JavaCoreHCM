@@ -32,6 +32,7 @@ public class Circle extends Shape {
 
 	@Override
 	public void fromConsole(Scanner sc) {
+		System.out.println("Hình tròn: ");
 		System.out.println("Tọa độ tâm: ");
 		System.out.print("x = ");
 		int x = sc.nextInt();

@@ -35,6 +35,7 @@ public class Rectangle extends Shape {
 
 	@Override
 	public void fromConsole(Scanner sc) {
+		System.out.println("Hình chữ nhật: ");
 		System.out.println("Tọa độ điểm trái trên: ");
 		System.out.print("x = ");
 		int x = sc.nextInt();

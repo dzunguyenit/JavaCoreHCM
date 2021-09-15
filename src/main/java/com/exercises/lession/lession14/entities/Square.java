@@ -32,6 +32,7 @@ public class Square extends Shape {
 
 	@Override
 	public void fromConsole(Scanner sc) {
+		System.out.println("Hình vuông: ");
 		System.out.println("Tọa độ điểm trái trên: ");
 		System.out.print("x = ");
 		int x = sc.nextInt();
