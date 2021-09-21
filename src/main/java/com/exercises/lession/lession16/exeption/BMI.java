@@ -11,21 +11,20 @@ public class BMI {
 //		
 //		Hàm main() sẽ bắt tất cả các exception có thể có của toàn bộ chương trình và hiển thị thông báo phù hợp
 
-		Scanner scanner = new Scanner(System.in);
-		System.out.print("Weight = ");
-
-		int weight = scanner.nextInt();
-
-		if (weight <= 0)
-			throw new BMICheckingException("Weight <= 0 is invalid number");
-
-		System.out.print("Height = ");
-		int height = scanner.nextInt();
-
-		if (height < 0)
-			throw new BMICheckingException("Height < 0 is invalid number");
-
 		try {
+			Scanner scanner = new Scanner(System.in);
+			System.out.print("Weight = ");
+
+			int weight = scanner.nextInt();
+
+			if (weight <= 0)
+				throw new BMICheckingException("Weight <= 0 is invalid number");
+
+			System.out.print("Height = ");
+			int height = scanner.nextInt();
+
+			if (height < 0)
+				throw new BMICheckingException("Height < 0 is invalid number");
 
 			double bmi = calculateBMI(weight, height);
 			System.out.println("BMI = " + bmi);
