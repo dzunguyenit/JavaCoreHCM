@@ -22,9 +22,10 @@ public class BMI {
 
 			System.out.print("Height = ");
 			int height = scanner.nextInt();
+			
 
-			if (height < 0)
-				throw new BMICheckingException("Height < 0 is invalid number");
+			if (height <= 0)
+				throw new BMICheckingException("Height <= 0 is invalid number");
 
 			double bmi = calculateBMI(weight, height);
 			System.out.println("BMI = " + bmi);
@@ -52,8 +53,6 @@ public class BMI {
 	}
 
 	public static double calculateBMI(int weight, int height) {
-		if (height == 0)
-			throw new BMICheckingException("Height = 0 is invalid number");
 		double heightMeter = ((double) (height / 100.0));
 		return ((double) weight) / (heightMeter * heightMeter);
 	}
