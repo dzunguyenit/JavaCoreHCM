@@ -53,7 +53,7 @@ public class BMI {
 
 	public static double calculateBMI(int weight, int height) {
 		if (height == 0)
-			throw new BMICheckingException("Weight = 0 is invalid number");
+			throw new BMICheckingException("Height = 0 is invalid number");
 		double heightMeter = ((double) (height / 100.0));
 		return ((double) weight) / (heightMeter * heightMeter);
 	}
