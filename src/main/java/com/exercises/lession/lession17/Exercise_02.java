@@ -14,8 +14,8 @@ public class Exercise_02 {
 //		Tên miền có thể là domain.xxx.yyy hoặc domain.xxx. Trong đó xxx và yyy là các chữ cái và có độ dài từ 2 trở lên.
 //		
 
-		String text1 = "Email: vunguyen1993@gmaill.com.vn, vunguyen_1993@gmaill.com.vn, nhunguyen1996";
-		Pattern pattern = Pattern.compile("[a-zA-Z]\\w+@\\w+\\.[a-zA-Z]{2,}\\.[a-zA-Z]{2,}");
+		String text1 = "Email: vunguyen1993@gmaill.com.vn, vu_nguyen_1993@gmail.com.vn, nhunguyen1996@gmail.com, vunht@onemount.com";
+		Pattern pattern = Pattern.compile("[a-zA-Z]\\w+@\\w+\\.[a-zA-Z]{2,}(\\.[a-zA-Z]{2,})?");
 		Matcher matcher = pattern.matcher(text1);
 
 		System.out.println("Email trong chuỗi text: " + text1);
