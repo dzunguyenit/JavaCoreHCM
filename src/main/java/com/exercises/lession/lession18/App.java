@@ -36,53 +36,50 @@ public class App {
 			System.out.println("6. Xóa tất cả các phân số");
 			System.out.println("0. Thoát");
 
-			int command = scanner.nextInt();
+			String command = scanner.nextLine();
 			switch (command) {
-			case 1:
+			case "1":
 				System.out.println("---------------------------------");
 				System.out.println("Xuất danh sách phân số...");
 				printOutputFraction(listFraction);
 				break;
-			case 2:
+			case "2":
 				System.out.println("---------------------------------");
 				System.out.println("Thêm phân số...");
 				System.out.println("Nhập vào các phân số: ");
-				Scanner sc = new Scanner(System.in);
-				String inputFraction = sc.nextLine();
+				String inputFraction = scanner.nextLine();
 				List<Fraction> listNewFraction = getListFractionFromInput(inputFraction);
 				listFraction.addAll(listNewFraction);
 				break;
-			case 3:
+			case "3":
 				System.out.println("---------------------------------");
 				System.out.println("Xóa phân số tại vị trí thứ: ");
 				System.out.println("Nhập vào trị trí K cần xoá: ");
-				Scanner scan = new Scanner(System.in);
-				String postionDelete = scan.nextLine();
+				String postionDelete = scanner.nextLine();
 				listFraction.remove(Integer.parseInt(postionDelete));
 				break;
-			case 4:
+			case "4":
 				System.out.println("---------------------------------");
 				System.out.println("Cập nhật phân số tại vị trí thứ: ");
 				System.out.println("Nhập vào trị trí K cần cập nhật: ");
-				Scanner scann = new Scanner(System.in);
-				String postionUpdate = scann.nextLine();
+				String postionUpdate = scanner.nextLine();
 				System.out.println("Nhập phân số cần cập nhật: ");
-				String valueUpdateFraction = scann.nextLine();
+				String valueUpdateFraction = scanner.nextLine();
 				Fraction fractionInput = getFractionFromInput(valueUpdateFraction);
 				listFraction.set(Integer.parseInt(postionUpdate), fractionInput);
 				break;
-			case 5:
+			case "5":
 				System.out.println("---------------------------------");
 				System.out.println("Phân số có giá trị lớn nhất: ");
 				Fraction maxFraction = getMaxFraction(listFraction);
 				System.out.println(maxFraction);
 				break;
-			case 6:
+			case "6":
 				System.out.println("---------------------------------");
 				System.out.println("Xóa tất cả các phân số: ");
 				listFraction.clear();
 				break;
-			case 0:
+			case "0":
 				System.out.println("---------------------------------");
 				System.out.println("Thoát chương trình...");
 				return;
