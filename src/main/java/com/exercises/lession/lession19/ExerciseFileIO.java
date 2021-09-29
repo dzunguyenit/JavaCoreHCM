@@ -4,53 +4,42 @@ import java.io.File;
 
 public class ExerciseFileIO {
 
-	public static String printDirectoryTree(File folder) {
+	public static String printPathTree(File folder) {
 		if (!folder.isDirectory()) {
-			throw new IllegalArgumentException("folder is not a Directory");
+			throw new IllegalArgumentException(folder + " folder is not a Directory");
 		}
-		int indent = 0;
+		int sizeSpace = 0;
 		StringBuilder sb = new StringBuilder();
-		printDirectoryTree(folder, indent, sb);
+		printPathTree(folder, sizeSpace, sb);
 		return sb.toString();
 	}
 
-	private static void printDirectoryTree(File folder, int indent, StringBuilder sb) {
-		if (!folder.isDirectory()) {
-			throw new IllegalArgumentException("folder is not a Directory");
+	private static void printPathTree(File folder, int sizeSpace, StringBuilder sb) {
+		for (int i = 0; i < sizeSpace; i++) {
+			sb.append("|  ");
 		}
-		sb.append(getIndentString(indent));
-		sb.append("+--");
-		sb.append(folder.getName());
-		sb.append("/");
-		sb.append("\n");
+		sb.append("+").append(folder.getName()).append("/").append("\n");
 		for (File file : folder.listFiles()) {
 			if (file.isDirectory()) {
-				printDirectoryTree(file, indent + 1, sb);
+				printPathTree(file, sizeSpace + 1, sb);
 			} else {
-				printFile(file, indent + 1, sb);
+				printFile(file, sizeSpace + 1, sb);
 			}
 		}
 
 	}
 
-	private static void printFile(File file, int indent, StringBuilder sb) {
-		sb.append(getIndentString(indent));
-		sb.append("+--");
-		sb.append(file.getName());
-		sb.append("\n");
-	}
-
-	private static String getIndentString(int indent) {
-		StringBuilder sb = new StringBuilder();
-		for (int i = 0; i < indent; i++) {
+	private static void printFile(File file, int sizeSpace, StringBuilder sb) {
+		for (int i = 0; i < sizeSpace; i++) {
 			sb.append("|  ");
 		}
-		return sb.toString();
+
+		sb.append("+--").append(file.getName()).append("\n");
 	}
 
 	public static void main(String[] args) {
 		File tempDerectory = new File(System.getProperty("user.dir") + "/");
-		System.out.println(ExerciseFileIO.printDirectoryTree(tempDerectory));
+		System.out.println(ExerciseFileIO.printPathTree(tempDerectory));
 
 	}
 }
