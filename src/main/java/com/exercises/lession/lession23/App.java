@@ -93,7 +93,7 @@ public class App {
 			writer.print("");
 			writer.close();
 		} catch (FileNotFoundException e) {
-			System.out.println("File not found" + e);
+			System.out.println("File " + fileName + " not found" + e);
 		}
 
 	}
