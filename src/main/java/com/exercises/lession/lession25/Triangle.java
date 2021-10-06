@@ -62,18 +62,6 @@ public class Triangle extends Shape {
 
 	public double calculatePerimeter(Triangle triangle) {
 		triangle = new Triangle(this.pointA, this.pointB, this.pointC);
-//		Cho tam giác ABC có A (1;2), B (-3;1), C(2;-5)
-//		a) Tính chu vi tam giác ABC
-//		b) Tính diện tích tam giác ABC
-//		c) Tìm tọa độ tâm đường tròn ngoại tiếp I của tam giác ABC
-//		Giải :
-//		a) 
-//		Ta có:
-//		AB = (-4; -1 ) => AB = √17
-//		AC = (1; -7) => AC = 5√2
-//		BC = (5; - 6) => BC = √61
-//		Chu vi tam giac ABC la:
-//		P = AB + AC + BC = √17 + 5√2 + √61 = 19,004.
 
 		// AB
 		int pointX_AB = this.pointB.getY() - this.pointA.getY();
