@@ -32,4 +32,10 @@ public class Point {
 	public String toString() {
 		return "(x,y) = (" + this.x + "," + this.y + ")";
 	}
+
+	public double calculateDistance(Point pointA, Point pointB) {
+		double distancePointX = (pointB.getX() - pointA.getX()) * (pointB.getX() - pointA.getX());
+		double distancePointY = (pointB.getY() - pointA.getY()) * (pointB.getY() - pointA.getY());
+		return Math.sqrt(distancePointX + distancePointY);
+	}
 }
