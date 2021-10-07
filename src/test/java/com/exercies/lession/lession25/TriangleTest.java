@@ -20,9 +20,7 @@ class TriangleTest {
 		Point pointB = new Point(3, 4);
 		double distanceAB = pointA.calculateDistance(pointA, pointB);
 		
-		distanceAB = Math.round(distanceAB * 100) / 100.000d;
-		
-		double actual = 2.83;
+		double actual = 2.8284271247461903;
 		assertEquals(distanceAB, actual);
 	}
 
@@ -30,12 +28,10 @@ class TriangleTest {
 	@Test
 	@DisplayName("Check function CalculatePerimeter")
 	void checkFunctionCalculatePerimeter() {
-		Triangle triangle = new Triangle(new Point(1, 2), new Point(-3, 1), new Point(2, -5));
+		Triangle triangle = new Triangle(new Point(0, 2), new Point(-3, 1), new Point(2, -5));
 		double perimeter = triangle.calculatePerimeter(triangle);
 
-		perimeter = Math.round(perimeter * 100) / 100.000d;
-
-		double actual = 19.0;
+		double actual = 18.252637225355553;
 		assertEquals(perimeter, actual);
 	}
 
