@@ -1,9 +1,10 @@
-package com.lession.lession25;
+package com.lession.lession26;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("Calculator Class Unit-Test Cases")
 class CalculatorTest {
@@ -14,5 +15,12 @@ class CalculatorTest {
 		double actual = Calculator.add(2, 3);
 		double expected = 5f;
 		assertEquals(expected, actual);
+	}
+
+	@Test
+	@DisplayName("Should not run this assertion")
+	@Disabled("Not implemented")
+	void shouldNotRunThisAssertion() {
+
 	}
 }

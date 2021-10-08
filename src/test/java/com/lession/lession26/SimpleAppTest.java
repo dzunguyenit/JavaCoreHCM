@@ -1,4 +1,4 @@
-package com.lession.lession25;
+package com.lession.lession26;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
