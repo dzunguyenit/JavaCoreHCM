@@ -1,0 +1,7 @@
+package com.lession.lession15.oop.iface.entities;
+
+public interface IRunnable {
+	void run();
+
+	void sleep();
+}
