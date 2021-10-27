@@ -4,6 +4,6 @@ import org.junit.platform.suite.api.SelectPackages;
 import org.junit.platform.suite.api.Suite;
 
 @Suite
-@SelectPackages({ "com.onemount.tests.simple", "com.onemount.tests.complex" })
+@SelectPackages({ "com.lession.lession27.simple", "com.lession.lession27.complex" })
 public class AllSuite {
 }
