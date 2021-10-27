@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import com.lession.lession27.Calculator;
 
-@DisplayName("com.onemount.Calculator Class Unit-Test Cases")
+@DisplayName("CalculatorTest Class Unit-Test Cases")
 public class CalculatorTest {
 
 	@Test
