@@ -1,7 +1,7 @@
 package com.lession.lession16.solution.utils;
 
-import com.lession.lession16.solution.exceptions.InvalidHeightException;
-import com.lession.lession16.solution.exceptions.InvalidWeightException;
+import com.lession.lession16.solution.exceptions.bmi.InvalidHeightException;
+import com.lession.lession16.solution.exceptions.bmi.InvalidWeightException;
 
 public class BMI {
 

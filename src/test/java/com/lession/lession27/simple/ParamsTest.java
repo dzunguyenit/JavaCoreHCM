@@ -15,7 +15,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.NullAndEmptySource;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import com.lession.lession27.Params;
+import com.lession.lession27.unittest.parameter.Params;
 
 public class ParamsTest {
 	@ParameterizedTest

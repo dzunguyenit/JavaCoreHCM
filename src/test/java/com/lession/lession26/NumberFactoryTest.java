@@ -2,6 +2,8 @@ package com.lession.lession26;
 
 import org.junit.jupiter.api.*;
 
+import com.lession.lession26.unittest.NumberFactory;
+
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;

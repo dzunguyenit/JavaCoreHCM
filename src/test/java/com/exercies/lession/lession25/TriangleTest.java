@@ -5,9 +5,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import com.exercises.lession.lession25.Point;
-import com.exercises.lession.lession25.Shape;
-import com.exercises.lession.lession25.Triangle;
+import com.exercises.lession.lession25.oop.Point;
+import com.exercises.lession.lession25.oop.Shape;
+import com.exercises.lession.lession25.oop.Triangle;
 
 @DisplayName("Triangle Class Unit-Test Cases")
 class TriangleTest {

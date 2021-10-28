@@ -10,7 +10,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import com.lession.lession27.NumberFactory;
+import com.lession.lession27.unittest.parameter.NumberFactory;
 
 public class NumberFactoryTest {
 

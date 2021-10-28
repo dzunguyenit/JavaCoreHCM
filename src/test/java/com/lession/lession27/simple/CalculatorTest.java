@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import com.lession.lession27.Calculator;
+import com.lession.lession27.unittest.parameter.Calculator;
 
 @DisplayName("CalculatorTest Class Unit-Test Cases")
 public class CalculatorTest {

@@ -3,6 +3,8 @@ package com.lession.lession25;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import com.lession.lession25.unittest.SimpleApp;
+
 public class SimpleAppTest {
 
 	@Test
