@@ -1,4 +1,4 @@
-package com.exercises.lession.lession8;
+package com.exercises.lession.lession8.array2d;
 
 import java.util.Scanner;
 

@@ -2,7 +2,7 @@ package com.exercises.lession.lession7.string;
 
 import java.util.Scanner;
 
-public class Exercise_04 {
+public class Exercise_04_DemSoLuongTu {
 
 	public static void main(String[] args) {
 		System.out.println("--------Exercise_04--------");

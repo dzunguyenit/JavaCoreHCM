@@ -2,7 +2,7 @@ package com.lession.lession27;
 
 import java.util.*;
 
-public class SimpleApp {
+public class SimpleAppAndHashMap {
 	public static String sayHello() {
 		return "hello junit 5";
 	}

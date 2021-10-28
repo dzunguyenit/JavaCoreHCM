@@ -2,7 +2,7 @@ package com.exercises.lession.lession7.string;
 
 import java.util.Scanner;
 
-public class Exercise_07 {
+public class Exercise_07_DemNguyenAm_PhuAm {
 
 	public static int[] countVowelConsonant(String s) {
 
