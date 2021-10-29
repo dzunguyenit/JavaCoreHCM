@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
 public class StudentTest {
@@ -39,13 +38,11 @@ public class StudentTest {
 		long count = students.stream().filter(student -> student.getBonus() > 8).count();
 		System.out.println(count);
 
-		Student min = students.stream().min(Comparator.comparing(Student::getBonus))
-				.orElseThrow(NoSuchElementException::new);
+		Student min = students.stream().min(Comparator.comparing(Student::getBonus)).get();
 
 		System.out.println(min);
 
-		Student max = students.stream().max(Comparator.comparing(Student::getBonus))
-				.orElseThrow(NoSuchElementException::new);
+		Student max = students.stream().max(Comparator.comparing(Student::getBonus)).get();
 
 		System.out.println(max);
 
