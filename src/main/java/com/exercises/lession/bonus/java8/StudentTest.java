@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.stream.Collectors;
 
 public class StudentTest {
 
@@ -48,6 +49,19 @@ public class StudentTest {
 
 		System.out.println(max);
 
+		List<Student> topTentudent = students.stream().sorted(Comparator.comparingDouble(Student::getBonus).reversed())
+				.limit(10).collect(Collectors.toList());
+		System.out.println("===========================================");
+		for (Student student : topTentudent) {
+			System.out.println(student);
+		}
+
+		List<Student> bottomTentudent = students.stream().sorted(Comparator.comparingDouble(Student::getBonus))
+				.limit(10).collect(Collectors.toList());
+		System.out.println("===========================================");
+		for (Student student : bottomTentudent) {
+			System.out.println(student);
+		}
 	}
 
 }
