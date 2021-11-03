@@ -10,7 +10,7 @@ import java.util.NoSuchElementException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import com.exercises.lession.bonus.java8.Person;
+import com.exercises.lession.bonus.java8.student.Person;
 
 @DisplayName("Java8Basic")
 class Java8Basic {

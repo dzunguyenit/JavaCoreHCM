@@ -1,4 +1,4 @@
-package com.exercises.lession.bonus.java8;
+package com.exercises.lession.bonus.java8.student;
 
 import java.util.ArrayList;
 import java.util.Collections;
